@@ -73,6 +73,8 @@ following keys/attributes:
 + object_type
 + site_name
 + twitter_site
++ twitter_creator
++ twitter_card
 + facebook_app_id
 + locale
 + extra_props
@@ -154,6 +156,16 @@ twitter_site
 ------------
 
 This key is used to render the ``twitter:site`` property.
+
+twitter_creator
+------------
+
+This key is used to render the ``twitter:creator`` property.
+
+twitter_card
+------------
+
+This key is used to render the ``twitter:card`` property.
 
 facebook_app_id
 ------------

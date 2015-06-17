@@ -25,6 +25,8 @@ class Meta(object):
         self.object_type = kwargs.get('object_type', settings.SITE_TYPE)
         self.site_name = kwargs.get('site_name', settings.SITE_NAME)
         self.twitter_site = kwargs.get('twitter_site')
+        self.twitter_creator = kwargs.get('twitter_creator')
+        self.twitter_card = kwargs.get('twitter_card')
         self.facebook_app_id = kwargs.get('facebook_app_id')
         self.locale = kwargs.get('locale')
         self.use_og = kwargs.get('use_og', settings.USE_OG_PROPERTIES)
@@ -118,6 +120,8 @@ class MetadataMixin(object):
     object_type = None
     site_name = None
     twitter_site = None
+    twitter_creator = None
+    twitter_card = None
     facebook_app_id = None
     locale = None
     use_sites = settings.USE_SITES
@@ -165,6 +169,12 @@ class MetadataMixin(object):
     def get_meta_twitter_site(self, context={}):
         return self.twitter_site
 
+    def get_meta_twitter_creator(self, context={}):
+        return self.twitter_creator
+
+    def get_meta_twitter_card(self, context={}):
+        return self.twitter_card
+
     def get_meta_facebook_app_id(self, context={}):
         return self.facebook_app_id
 
@@ -187,6 +197,8 @@ class MetadataMixin(object):
             object_type=self.get_meta_object_type(context=context),
             site_name=self.get_meta_site_name(context=context),
             twitter_site=self.get_meta_twitter_site(context=context),
+            twitter_creator=self.get_meta_twitter_creator(context=context),
+            twitter_card=self.get_meta_twitter_card(context=context),
             locale=self.get_meta_locale(context=context),
             facebook_app_id=self.get_meta_facebook_app_id(context=context),
         )

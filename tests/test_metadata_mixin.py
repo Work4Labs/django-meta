@@ -180,6 +180,32 @@ class MetadataMixinTestCase(unittest.TestCase):
             '@foo'
         )
 
+    def test_get_meta_twitter_creator(self):
+        m = MetadataMixin()
+        self.assertEqual(
+            m.get_meta_twitter_creator(),
+            None
+        )
+
+        m.twitter_creator = '@foo'
+        self.assertEqual(
+            m.get_meta_twitter_creator(),
+            '@foo'
+        )
+
+    def test_get_meta_twitter_card(self):
+        m = MetadataMixin()
+        self.assertEqual(
+            m.get_meta_twitter_card(),
+            None
+        )
+
+        m.twitter_card = 'summary'
+        self.assertEqual(
+            m.get_meta_twitter_card(),
+            'summary'
+        )
+
     def test_get_meta_facebook_app_id(self):
         m = MetadataMixin()
         self.assertEqual(
